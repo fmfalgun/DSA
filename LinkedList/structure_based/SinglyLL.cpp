@@ -98,6 +98,37 @@ void traversal(Node<T>* head){
 	}
 }
 
+template <typename T>
+void update (Node<T>* head, int position, T data){
+	Node<T>* temp = head;
+	while(temp!= nullptr && position >0){
+		temp = temp->next;
+       		position --;
+	}
+ 	if (temp != nullptr) { // Ensure the position is within the list
+        	temp->data = data;
+    	} else {
+        	std::cout << "Position out of bounds" << std::endl;
+    	}
+}
+
+template <typename T>
+void reverse (Node<T>*& head){
+	Node<T>* next = nullptr;
+	Node<T>* now = head;
+	Node<T>* prev = nullptr;
+
+
+	while (now != nullptr){
+		
+		next = now->next;
+		now->next = prev;
+		prev = now;
+		now = next;
+	}
+	head = prev;
+}
+
 // Main function to test insertion and deletion
 int main() {
     // Example usage
@@ -110,19 +141,18 @@ int main() {
     insertion(head, 1, 15);  // Insert at position 1
 
     // Print the linked list
+    std::cout << "Linked List after insertions: ";
     traversal(head);
     std::cout << std::endl;
 
     // Testing search function
     int value_to_search = 15;
     Node<int>* result = search(head, value_to_search);
-
     if (result != nullptr) {
         std::cout << "Found value " << value_to_search << " at address: " << result << std::endl;
     } else {
         std::cout << "Value " << value_to_search << " not found in the list." << std::endl;
     }
-
 
     // Delete nodes
     deletion(head, 1);  // Delete node at position 1
@@ -132,19 +162,29 @@ int main() {
     traversal(head);
     std::cout << std::endl;
 
-// Testing search function
+    // Testing search function again
     value_to_search = 15;
     result = search(head, value_to_search);
-
     if (result != nullptr) {
         std::cout << "Found value " << value_to_search << " at address: " << result << std::endl;
     } else {
         std::cout << "Value " << value_to_search << " not found in the list." << std::endl;
     }
 
+    // Update nodes
+    update(head, 1, 25);  // Update node at position 1
+    std::cout << "Linked List after update: ";
+    traversal(head);
+    std::cout << std::endl;
+
+    // Reverse the linked list
+    reverse(head);
+    std::cout << "Linked List after reversal: ";
+    traversal(head);
+    std::cout << std::endl;
 
     // Clean up memory
-    current = head;
+    Node<int>* current = head;
     while (current != nullptr) {
         Node<int>* temp = current;
         current = current->next;
@@ -154,3 +194,4 @@ int main() {
 
     return 0;
 }
+
