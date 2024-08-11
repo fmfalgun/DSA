@@ -1,40 +1,38 @@
 #include <iostream>
-#include <vector>
+#include <list>
+#include <iterator>
 
 using namespace std;
 
-// Types of Queus available are as follow
-// - Array based
-// - Linked List based
-// - Class based
-// - Structure based
-
-// 1. Dynamic Array based
 template <typename T>
-vector<T> stk;
+list<T> stack;
 
-// inserting element on the top
 template <typename T>
 void push(T data){
-	stk<T>.push_back(data);
+	auto it = stack<T>.begin();
+	std::advance(it, stack<T>.end());
+	stack<T>.emplace(it,data);
 }
 
-// removing top element
+
 template <typename T>
 void pop(void){
-	stk<T>.pop_back();
+	auto it = stack<T>.begin();
+	advance(it,0);
+	stack<T>.erase(it);
 }
 
-// checking top element
 template <typename T>
-T peek(){
-	return stk<T>.back();
+T peek(void){
+	size_t position = stack<T>.size();
+	auto it = stack<T>.begin();
+	advance(it, position-1);
+	return *it;
 }
 
-//stack is empty?
 template <typename T>
 bool isEmpty(void){
-	return stk<T>.empty();
+	return stack<T>.empty();
 }
 
 int main(void){
@@ -73,3 +71,4 @@ int main(void){
 
 	return 0;
 }
+
