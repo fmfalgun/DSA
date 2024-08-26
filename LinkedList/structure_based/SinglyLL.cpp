@@ -5,7 +5,7 @@ using namespace std;
 // we are going to code on following manner 
 // - structure base
 // - class base
-// - union base
+// - union base - not feasible (either we can save data or reference to next node)
 // - pointer base
 // - arrays base
 
