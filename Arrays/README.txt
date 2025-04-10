@@ -1,4 +1,4 @@
-# Arrays - A Concise Guide
+# Arrays - From Basics to Advanced Techniques
 
 Arrays are one of the most fundamental data structures in programming - a collection of elements stored at contiguous memory locations, accessed using indices.
 
@@ -21,7 +21,7 @@ Search: Unsorted array        // O(n)
 Search: Sorted array          // O(log n) with binary search
 ```
 
-## Practice Problems (Easy to Complex)
+## Problems - Easy Level
 
 ### Problem 1: Two Sum
 **Problem**: Given an array of integers and a target, return indices of two numbers that add up to the target.
@@ -93,6 +93,8 @@ print(merge([[1,3],[2,6],[8,10],[15,18]]))  # Output: [[1,6],[8,10],[15,18]]
 ```
 
 **Approach**: Sort intervals by start time and then merge overlapping ones.
+
+## Problems - Medium Level
 
 ### Problem 4: Next Permutation
 **Problem**: Rearrange numbers to form the lexicographically next greater permutation.
@@ -190,9 +192,6 @@ print(first_missing_positive([3,4,-1,1]))  # Output: 2
 
 **Approach**: Use the array itself as a hash table by placing each number at its correct position.
 
-These problems progress from simple array manipulation to more complex algorithms, helping you build a strong foundation in array operations and techniques.
-Let's continue with more challenging array problems:
-
 ### Problem 7: Trapping Rain Water
 **Problem**: Given an array representing elevation map, calculate how much rainwater can be trapped.
 
@@ -223,6 +222,8 @@ print(trap([0,1,0,2,1,0,1,3,2,1,2,1]))  # Output: 6
 ```
 
 **Approach**: Use two pointers to track maximum heights from left and right, calculating trapped water at each position.
+
+## Problems - Hard Level
 
 ### Problem 8: Jump Game II
 **Problem**: Find minimum number of jumps to reach the last index.
@@ -394,8 +395,7 @@ print(longestConsecutive([100,4,200,1,3,2]))  # Output: 4
 
 **Approach**: Use a hash set to check for consecutive elements efficiently, only starting sequences from the smallest element of each sequence.
 
-These more advanced array problems showcase sophisticated techniques like two pointers, binary search, dynamic programming, and creative uses of data structures with arrays to solve complex problems efficiently.
-Let's continue with even more advanced array problems and techniques:
+## Problems - Advanced Level
 
 ### Problem 13: Subarray Sum Equals K
 **Problem**: Find the total number of continuous subarrays whose sum equals k.
@@ -542,6 +542,8 @@ print(findUnsortedSubarray([2,6,4,8,10,9,15]))  # Output: 5
 
 **Approach**: Find the boundaries of the unsorted subarray, then extend them to ensure all smaller/larger elements are included.
 
+## Problems - Expert Level
+
 ### Problem 17: Spiral Matrix
 **Problem**: Return all elements of a matrix in spiral order.
 
@@ -617,9 +619,6 @@ print(countSmaller([5,2,6,1]))  # Output: [2,1,1,0]
 ```
 
 **Approach**: Use a modified merge sort to count inversions, which represent smaller elements to the right.
-
-These problems showcase even more advanced array techniques, including prefix sums, complex two-pointer approaches, modified sorting algorithms, and matrix manipulation. They require deeper understanding of algorithmic patterns and creative problem-solving approaches.
-Let's complete our exploration of advanced array problems with some of the most challenging techniques and patterns:
 
 ### Problem 19: Maximum Sum of 3 Non-Overlapping Subarrays
 **Problem**: Find three non-overlapping subarrays of size k with the largest sum.
@@ -740,6 +739,8 @@ print(longestIncreasingPath(matrix))  # Output: 4
 ```
 
 **Approach**: Use DFS with memoization to avoid recomputing paths, exploring all possible increasing paths from each cell.
+
+## Problems - Elite Level
 
 ### Problem 21: Kth Smallest Element in a Sorted Matrix
 **Problem**: Find the kth smallest element in a matrix where each row and column is sorted.
@@ -887,10 +888,7 @@ print(maxPoints([[1,1],[2,2],[3,3]]))  # Output: 3
 print(maxPoints([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]))  # Output: 4
 ```
 
-**Approach**: For each point, calculate the slope with all other points. Points with the same slope lie on the same line.
-
-These final challenging problems demonstrate sophisticated techniques including dynamic programming with prefix sums, heap-based algorithms, geometric approaches, and advanced sliding window techniques. Mastering these patterns will significantly enhance your ability to solve complex array problems.
-Let's explore the final set of extremely challenging array problems that often appear in competitive programming and technical interviews:
+**Approach**: For each point, calculate the slope with all other points. Points with the same slope lie on the same line. Use a hash map to count points with the same slope relative to the current point.
 
 ### Problem 25: Skyline Problem
 **Problem**: Given the locations and heights of buildings, determine the skyline formed.
@@ -1137,6 +1135,8 @@ print(countRangeSum([-2, 5, -1], -2, 2))  # Output: 3
 
 **Approach**: Use a divide-and-conquer approach with merge sort to count range sums efficiently.
 
+## Problems - Master Level
+
 ### Problem 29: Reverse Pairs
 **Problem**: Count the number of important reverse pairs in an array (i < j and nums[i] > 2*nums[j]).
 
@@ -1240,13 +1240,56 @@ print(maximumGap([3,6,9,1]))  # Output: 3
 
 **Approach**: Use the Pigeonhole Principle with buckets to find the maximum gap more efficiently than sorting.
 
-These final problems represent some of the most challenging array-related problems found in competitive programming and technical interviews. They showcase advanced techniques like:
+## Key Array Techniques Summary
 
-1. Priority queues and heaps for managing dynamic sets
-2. Divide and conquer with merge sort variations
-3. Binary search on answer techniques
-4. Bucket/pigeonhole principle optimizations
-5. Efficient handling of prefix sums and range queries
-6. Complex geometric problems with multiple dimensions
+### 1. Two Pointers
+- Used in problems like Container With Most Water, Trapping Rain Water
+- Efficient for problems requiring element comparison or window manipulation
+- Time complexity typically O(n)
 
-Mastering these techniques will prepare you for virtually any array problem you might encounter in competitive programming or technical interviews.
+### 2. Sliding Window
+- Used for problems like Sliding Window Maximum, Subarray Sum
+- Maintains a window that slides through the array
+- Efficient for substring/subarray problems
+
+### 3. Prefix Sums
+- Used in problems like Subarray Sum Equals K, Maximum Sum Rectangle
+- Precomputes cumulative sums for O(1) range sum queries
+- Helpful for subarray sum calculations
+
+### 4. Modified Binary Search
+- Used in problems like Median of Two Sorted Arrays, Search in Rotated Sorted Array
+- Reduces time complexity from O(n) to O(log n)
+- Applied to sorted or partially sorted arrays
+
+### 5. Heap/Priority Queue
+- Used in problems like Kth Smallest Element, Skyline Problem
+- Efficient for maintaining ordered elements with dynamic updates
+- Provides O(log n) insertion and removal
+
+### 6. Dynamic Programming
+- Used in problems like Maximum Product Subarray, Maximum Sum Rectangle
+- Breaks down problems into overlapping subproblems
+- Efficiently computes optimal solutions by reusing results
+
+### 7. Divide and Conquer
+- Used in problems like Count of Range Sum, Reverse Pairs
+- Splits problems into smaller instances, often with merge steps
+- Typically combined with techniques like merge sort
+
+### 8. Monotonic Stack/Queue
+- Used in problems like Largest Rectangle in Histogram, Sliding Window Maximum
+- Maintains elements in increasing/decreasing order
+- Efficiently handles next greater/smaller element problems
+
+### 9. Bucket/Pigeonhole Principle
+- Used in problems like Maximum Gap
+- Divides elements into buckets for more efficient processing
+- Exploits mathematical properties to achieve linear time solutions
+
+### 10. Matrix Techniques
+- Used in problems like Spiral Matrix, Longest Increasing Path
+- Special traversal methods and 2D algorithms
+- Often combined with other techniques like DP or BFS/DFS
+
+Mastering these array techniques will equip you to solve virtually any array problem in competitive programming and technical interviews.
