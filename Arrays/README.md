@@ -1,5 +1,19 @@
 # Arrays - From Basics to Advanced Techniques
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Key Characteristics](#key-characteristics)
+3. [Core Operations](#core-operations)
+4. [When to Use Arrays](#when-to-use-arrays)
+5. [Real-World Applications](#real-world-applications)
+6. [Problem Statements](#problem-statements)
+7. [Key Array Techniques Summary](#key-array-techniques-summary)
+8. [Related Topics](#related-topics)
+
+---
+
+## Introduction
+
 Arrays are one of the most fundamental data structures in programming - a collection of elements stored at contiguous memory locations, accessed using indices.
 
 ## Key Characteristics
@@ -21,7 +35,67 @@ Search: Unsorted array        // O(n)
 Search: Sorted array          // O(log n) with binary search
 ```
 
-## Problems - Easy Level
+---
+
+## When to Use Arrays
+
+### ✅ Use Arrays When:
+- Need fast random access by index (O(1))
+- Know the size of data in advance (or can estimate)
+- Data is dense and contiguous
+- Need cache-friendly data structure
+- Implementing other data structures (stacks, queues, heaps)
+- Working with matrices or grids
+- Need simple, memory-efficient storage
+
+### ❌ Avoid Arrays When:
+- Frequent insertions/deletions in middle (use linked list)
+- Size changes frequently (use dynamic arrays/lists)
+- Need fast search in unsorted data (use hash table)
+- Need ordered data with frequent updates (use balanced BST)
+
+---
+
+## Real-World Applications
+
+### 1. **Image Processing**
+- Pixels stored as 2D arrays
+- RGB values accessed by coordinates
+- Filters and transformations applied to pixel arrays
+
+### 2. **Databases**
+- Database tables represented as arrays of records
+- Indexing for fast data retrieval
+- Buffer pools for page caching
+
+### 3. **Gaming**
+- Game boards (chess, tic-tac-toe) as 2D arrays
+- Sprite sheets and texture atlases
+- Collision detection grids
+
+### 4. **Scientific Computing**
+- Matrices and vectors
+- Time series data
+- Sensor readings and measurements
+
+### 5. **Operating Systems**
+- Process tables
+- Memory management (page tables)
+- File allocation tables
+
+### 6. **Web Development**
+- DOM elements accessed as arrays
+- Session data storage
+- API response payloads (JSON arrays)
+
+### 7. **Data Analysis**
+- Time series analysis
+- Statistical computations
+- Data preprocessing pipelines
+
+---
+
+## Problem Statements
 
 ### Problem 1: Two Sum
 **Problem**: Given an array of integers and a target, return indices of two numbers that add up to the target.
@@ -1292,4 +1366,55 @@ print(maximumGap([3,6,9,1]))  # Output: 3
 - Special traversal methods and 2D algorithms
 - Often combined with other techniques like DP or BFS/DFS
 
-Mastering these array techniques will equip you to solve virtually any array problem in competitive programming and technical interviews.
+---
+
+## Related Topics
+
+### Prerequisites:
+- Basic programming concepts
+- Loops and conditionals
+- Functions
+
+### Related Data Structures:
+- Dynamic Arrays (ArrayList, Vector)
+- Matrices (2D Arrays)
+- Strings (character arrays)
+- Hash Tables (for optimizing array problems)
+
+### Related Algorithms:
+- [Sorting Algorithms](../Sorting/) - Essential for many array problems
+- [Searching Algorithms](../Searching/) - Binary search on sorted arrays
+- [Two Pointers](../Searching/) - Common array technique
+- [Sliding Window](../DynamicProgramming/) - Subarray problems
+- [Dynamic Programming](../DynamicProgramming/) - Array DP problems
+
+### Next Topics to Study:
+- Linked Lists - Alternative to arrays for dynamic data
+- Hash Tables - For fast lookups in array problems
+- Stacks & Queues - Built using arrays
+- Sorting - Organizing array data
+- Binary Search - Searching in sorted arrays
+
+---
+
+## Summary
+
+Arrays are fundamental for:
+- ✅ Fast random access (O(1))
+- ✅ Cache-friendly memory layout
+- ✅ Foundation for other data structures
+- ✅ Matrix and grid problems
+- ✅ Most commonly tested in interviews
+
+**Key Takeaways:**
+1. Master the core techniques: two pointers, sliding window, prefix sums
+2. Understand time/space trade-offs
+3. Practice both 1D and 2D array problems
+4. Learn to optimize using auxiliary data structures (hash maps, heaps)
+5. Know when to sort and when not to
+
+---
+
+**Mastering these array techniques will equip you to solve virtually any array problem in competitive programming and technical interviews!**
+
+**Happy Learning! 🎓**
