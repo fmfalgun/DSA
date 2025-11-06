@@ -3,18 +3,21 @@
 This guide covers linked list data structures from fundamentals to advanced topics, with implementation examples and practice problems in increasing order of complexity.
 
 ## Table of Contents
-
 1. [Introduction to Linked Lists](#introduction-to-linked-lists)
 2. [Types of Linked Lists](#types-of-linked-lists)
 3. [Basic Implementation](#basic-implementation)
 4. [Core Operations](#core-operations)
 5. [Two-Pointer Techniques](#two-pointer-techniques)
-6. [Common LinkedList Problems](#common-linkedlist-problems)
-7. [Advanced LinkedList Problems](#advanced-linkedlist-problems)
-8. [LinkedList Variations](#linkedlist-variations)
-9. [Optimization Techniques](#optimization-techniques)
-10. [Common Pitfalls](#common-pitfalls)
-11. [Real-World Applications](#real-world-applications)
+6. [When to Use Linked Lists](#when-to-use-linked-lists)
+7. [Real-World Applications](#real-world-applications)
+8. [Common LinkedList Problems](#common-linkedlist-problems)
+9. [Advanced LinkedList Problems](#advanced-linkedlist-problems)
+10. [LinkedList Variations](#linkedlist-variations)
+11. [Optimization Techniques](#optimization-techniques)
+12. [Common Pitfalls](#common-pitfalls)
+13. [Related Topics](#related-topics)
+
+---
 
 ## Introduction to Linked Lists
 
@@ -208,6 +211,27 @@ def isPalindrome(head):
 
 3. **Multiple Pointers**
    - Used for more complex operations
+
+---
+
+## When to Use Linked Lists
+
+### ✅ Use Linked Lists When:
+- Frequent insertions/deletions, especially at beginning
+- Unknown or changing size of data
+- Don't need random access to elements
+- Implementing stacks, queues, or other data structures
+- Memory fragmentation is a concern
+- Need to maintain insertion order with frequent modifications
+
+### ❌ Avoid Linked Lists When:
+- Need fast random access by index (use arrays)
+- Memory overhead of pointers is significant
+- Need frequent searches (use hash table or BST)
+- Working with small, fixed-size datasets (array is simpler)
+- Cache performance is critical (arrays are cache-friendly)
+
+---
 
 ## Common LinkedList Problems
 
@@ -983,3 +1007,61 @@ In languages like C and C++, not properly freeing nodes can cause memory leaks.
     - Directory structures and file allocation tables.
 
 By understanding linked lists thoroughly, from basic operations to advanced patterns and optimizations, you'll be well-equipped to solve a wide range of problems efficiently and implement complex data structures.
+
+---
+
+## Related Topics
+
+### Prerequisites:
+- [Arrays](../Arrays/) - For comparison with linked lists
+- [Recursion](../Recursion/) - Many linked list problems use recursion
+- Pointers/References
+
+### Related Data Structures:
+- [Stacks](../Stack/) - Can be implemented with linked lists
+- [Queues](../Queue/) - Can be implemented with linked lists
+- [Hash Tables](../HashTables/) - For optimizing linked list problems
+- [Trees](../Trees/) - Extension of linked lists
+
+### Related Algorithms:
+- [Two Pointers](../Searching/) - Common technique for linked lists
+- [Fast and Slow Pointers](../Searching/) - Cycle detection
+- [Recursion](../Recursion/) - Traversal and manipulation
+
+### Next Topics to Study:
+- Doubly Linked Lists - Bidirectional traversal
+- Circular Linked Lists - Loop-based structures
+- Skip Lists - Probabilistic data structure
+- Trees - Hierarchical linked structures
+
+---
+
+## Summary
+
+Linked Lists are fundamental for:
+- ✅ Dynamic size management
+- ✅ Efficient insertions/deletions
+- ✅ Implementing other data structures
+- ✅ Memory-efficient storage
+- ✅ Building blocks for advanced structures
+
+**Key Takeaways:**
+1. Master basic operations: insertion, deletion, traversal
+2. Understand pointer manipulation
+3. Practice two-pointer techniques
+4. Know when to use vs arrays
+5. Handle edge cases (null, single node, cycles)
+
+**Time Complexity:**
+- Access: O(n)
+- Search: O(n)
+- Insert (beginning): O(1)
+- Insert (end): O(n) without tail pointer, O(1) with tail
+- Delete (beginning): O(1)
+- Delete (arbitrary): O(n)
+
+---
+
+**Happy Learning! 🎓**
+
+*Master linked lists, and you'll understand the foundation of dynamic data structures!*

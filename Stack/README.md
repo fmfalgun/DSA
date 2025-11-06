@@ -1,6 +1,27 @@
-# Stack Data Structure
+# Stack Data Structure - Complete Guide
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Basic Operations](#basic-operations)
+3. [Implementation Approaches](#implementation-approaches)
+4. [When to Use Stacks](#when-to-use-stacks)
+5. [Real-World Applications](#real-world-applications)
+6. [Problem Statements](#problem-statements)
+7. [Related Topics](#related-topics)
+
+---
+
+## Introduction
 
 A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. It works like a stack of plates where you can only add or remove items from the top.
+
+### Key Characteristics:
+- **LIFO:** Last element added is first to be removed
+- **Restricted Access:** Can only access top element
+- **Dynamic Size:** Can grow and shrink as needed
+- **Two Main Operations:** Push (add) and Pop (remove)
+
+---
 
 ## Basic Operations
 
@@ -55,6 +76,28 @@ class Stack {
     }
 }
 ```
+
+---
+
+## When to Use Stacks
+
+### ✅ Use Stacks When:
+- Need LIFO (Last-In-First-Out) behavior
+- Function call management (recursion, call stack)
+- Undo/Redo functionality
+- Expression evaluation (infix, postfix, prefix)
+- Parsing (balanced parentheses, syntax checking)
+- Backtracking algorithms (DFS, maze solving)
+- Browser history (back button)
+- Reversing data
+
+### ❌ Avoid Stacks When:
+- Need FIFO behavior (use queue)
+- Need random access to elements (use array)
+- Need to access elements other than top (use array/list)
+- Frequently need to access bottom elements
+
+---
 
 ## Practice Problems
 
@@ -1035,3 +1078,59 @@ When implementing complex stack-based solutions, consider these advanced techniq
    
 4. **Avoid unnecessary operations** by carefully designing your algorithm
 
+
+---
+
+## Related Topics
+
+### Prerequisites:
+- [Arrays](../Arrays/) - For array-based stack implementation
+- [Linked Lists](../LinkedList/) - For linked list-based stack
+- [Recursion](../Recursion/) - Stack is fundamental to recursion
+
+### Related Data Structures:
+- [Queues](../Queue/) - FIFO counterpart to stack
+- [Deque](../Queue/) - Double-ended queue (stack + queue)
+- Call Stack - Built-in stack for function calls
+
+### Related Algorithms:
+- [Depth-First Search](../GraphAlgorithms/Traversal/) - Uses stack
+- [Backtracking](../Recursion/) - Stack-based exploration
+- [Dynamic Programming](../DynamicProgramming/) - Some problems use stack
+
+### Next Topics to Study:
+- Queues - FIFO data structure
+- Expression Parsing - Stack applications
+- Backtracking - Stack-based algorithms
+- DFS - Graph traversal using stacks
+
+---
+
+## Summary
+
+Stacks are essential for:
+- ✅ LIFO operations
+- ✅ Function call management
+- ✅ Expression evaluation
+- ✅ Backtracking algorithms
+- ✅ Undo/Redo functionality
+- ✅ Parsing and syntax checking
+
+**Key Takeaways:**
+1. Master basic operations: push, pop, peek
+2. Understand LIFO principle
+3. Know when to use array vs linked list implementation
+4. Practice common patterns: monotonic stack, expression evaluation
+5. Stacks are fundamental to recursion and DFS
+
+**Time Complexity:**
+- Push: O(1)
+- Pop: O(1)
+- Peek: O(1)
+- Search: O(n)
+
+---
+
+**Happy Learning! 🎓**
+
+*Master stacks, and you'll solve countless algorithmic challenges!*
