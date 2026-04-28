@@ -55,13 +55,12 @@ void main(void){
 	non_zero_index[counter] = -1;
 
 	// sorting
-	for (int i = 0; i < 256; i++){
-		for (int j = i+1; j < 256; j++){
-			if ((freq[non_zero_index[i]] < freq[non_zero_index[j]]) && 
-				(!((i != -1) || (j != -1)))){
-				int temp = i;
-				i = j;
-				j = temp;
+	for (int i = 0; i < counter; i++){
+		for (int j = i+1; j < counter; j++){
+			if (freq[non_zero_index[i]] < freq[non_zero_index[j]]){
+				int temp = non_zero_index[i];
+				non_zero_index[i] = non_zero_index[j];
+				non_zero_index[j] = temp;
 			}
 		}
 	}
