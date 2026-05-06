@@ -251,9 +251,11 @@ Every extraction starts sift-down from the **root** — always maximum room to f
 
 ## Session 06 — What's Next
 
-Per `algorithms_masterclass.md` §24, next topic: **Quick Sort**.
+Per `algorithms_masterclass.md` §24, next topic: **Quick Sort (continued)**.
 
-- Partition function (Lomuto scheme) — the core of quicksort
-- Pivot selection
-- Recursive structure
-- Worst case O(n²) and how to avoid it
+Lomuto partition + basic quicksort structure was covered in **Session 02**. Remaining topics:
+
+- **Hoare partition** — two pointers from both ends; faster in practice than Lomuto
+- **3-way partition (Dutch flag)** — partitions into `<`, `=`, `>`; O(n) when many duplicates
+- **Pivot selection** — random pivot, median-of-three; how to avoid O(n²) worst case
+- **Worst case analysis** — when does quicksort degrade, why, and concrete adversarial inputs
