@@ -1,34 +1,38 @@
 # DSA
 
 - Learning + revision reference while working through Love Babbar's DSA-450 sheet, one problem (or one improvement) per branch and PR, even solo.
-- [companies/](./companies/) holds real interview problems tied to a specific company — separate from the sheet work, not gated by the checks below.
-- Layout (per topic, at repo root): `<Topic>/codes/<name>.cpp` (source), `<Topic>/binary/<name>` (compiled output), `<Topic>/input/<name>.in` (sample input), `<Topic>/output/<name>.out` (expected output), `<Topic>/notes/<name>.md` (optional per-problem deep-dive). `<Topic>/THEORY.md` is the static theory/problem-list reference; `<Topic>/mental-model.md` is the organic pattern checklist that grows as problems get solved — see "Per-topic files" below.
+- Three top-level buckets, by what the content actually is:
+  - [lovebabbar-450dsa/](./lovebabbar-450dsa/) — the active sheet. Once this is done, the plan is to move on to other sheets (Striver's A2Z/SDE, NeetCode 150, etc.), each getting its own sibling folder so they don't collide.
+  - [non-450/](./non-450/) — topics that aren't part of Love Babbar's DSA-450 at all (theory reference only, not active work).
+  - [theory/](./theory/) — generic concept/theory write-ups (not tied to any specific sheet — these predate the DSA-450 focus and were never actually the 450 list, so they're kept separate rather than mixed into either bucket above).
+- [companies/](./companies/) holds real interview problems tied to a specific company — separate from all of the above, not gated by the checks below.
+- Layout (per topic, under `lovebabbar-450dsa/`): `README.md` (curated DSA-450 problem list for that topic + growing mental-model section — see "Per-topic files" below), `codes/<name>.cpp` (source), `binary/<name>` (compiled output), `input/<name>.in` (sample input), `output/<name>.out` (expected output), `notes/<name>.md` (optional per-problem deep-dive).
 - One-time local setup after cloning: `git config core.hooksPath .githooks`.
 
 ---
 
 ## DSA-450 Topics
 
-Once DSA-450 is done, the plan is to move on to other sheets (Striver's A2Z/SDE, NeetCode 150, etc.). Topics below that aren't part of DSA-450 are parked under [non-450/](./non-450/) until that phase starts.
+Cross-checked against the canonical 15-topic breakdown (Array, Matrix, String, Searching & Sorting, Linked List, Binary Trees, BST, Greedy, BackTracking, Stack & Queue, Heap & Priority Queue, Graph, Trie, Dynamic Programming, Bit Manipulation) — folders here are split finer in places (e.g. Stack/Queue, Searching/Sorting as separate dirs) but cover the same ground. Each link goes to the topic's curated problem list; general theory for the same topic lives at the matching path under [theory/](./theory/).
 
-Cross-checked against the canonical 15-topic breakdown (Array, Matrix, String, Searching & Sorting, Linked List, Binary Trees, BST, Greedy, BackTracking, Stack & Queue, Heap & Priority Queue, Graph, Trie, Dynamic Programming, Bit Manipulation) — folders here are split finer in places (e.g. Stack/Queue, Searching/Sorting as separate dirs) but cover the same ground.
+- [Arrays](./lovebabbar-450dsa/Arrays/README.md)
+- [Matrix](./lovebabbar-450dsa/Matrix/README.md)
+- [Linked Lists](./lovebabbar-450dsa/LinkedList/README.md)
+- [Stacks](./lovebabbar-450dsa/Stack/README.md)
+- [Queues](./lovebabbar-450dsa/Queue/README.md)
+- [Trees](./lovebabbar-450dsa/Trees/README.md) (covers Binary Trees + BST)
+- [Heaps](./lovebabbar-450dsa/Heaps/README.md)
+- [Graphs](./lovebabbar-450dsa/Graphs/README.md) + Graph Algorithms ([Traversal](./theory/GraphAlgorithms/Traversal/THEORY.md), [Shortest Path](./theory/GraphAlgorithms/ShortestPath/THEORY.md), [MST](./theory/GraphAlgorithms/MST/THEORY.md), [Topological Sort](./theory/GraphAlgorithms/TopologicalSort/THEORY.md) — theory only so far, no curated list yet)
+- [Tries](./lovebabbar-450dsa/Tries/README.md)
+- [Sorting](./lovebabbar-450dsa/Sorting/README.md)
+- [Searching](./lovebabbar-450dsa/Searching/README.md)
+- [BackTracking](./lovebabbar-450dsa/BackTracking/README.md)
+- [Dynamic Programming](./lovebabbar-450dsa/DynamicProgramming/README.md)
+- [Greedy](./lovebabbar-450dsa/Greedy/README.md)
+- [Bit Manipulation](./lovebabbar-450dsa/BitManipulation/README.md)
+- [String Algorithms](./lovebabbar-450dsa/StringAlgorithms/README.md)
 
-- [Arrays](./Arrays/THEORY.md)
-- [Matrix](./Matrix/THEORY.md)
-- [Linked Lists](./LinkedList/THEORY.md)
-- [Stacks](./Stack/THEORY.md)
-- [Queues](./Queue/THEORY.md)
-- [Trees](./Trees/THEORY.md) (covers Binary Trees + BST)
-- [Heaps](./Heaps/THEORY.md)
-- [Graphs](./Graphs/THEORY.md) + Graph Algorithms ([Traversal](./GraphAlgorithms/Traversal/THEORY.md), [Shortest Path](./GraphAlgorithms/ShortestPath/THEORY.md), [MST](./GraphAlgorithms/MST/THEORY.md), [Topological Sort](./GraphAlgorithms/TopologicalSort/THEORY.md))
-- [Tries](./Tries/THEORY.md)
-- [Sorting](./Sorting/THEORY.md)
-- [Searching](./Searching/THEORY.md)
-- [BackTracking](./BackTracking/THEORY.md)
-- [Dynamic Programming](./DynamicProgramming/THEORY.md)
-- [Greedy](./Greedy/THEORY.md)
-- [Bit Manipulation](./BitManipulation/THEORY.md)
-- [String Algorithms](./StringAlgorithms/THEORY.md)
+Problem lists are generated from prepClash's `dsa450.ts` via `scripts/generate_topic_readmes.py` — rerun it if that source data changes. Links are only included where independently verified against prepClash's arena data; unverified entries list the name (and LeetCode number, if known) without a link rather than guessing one.
 
 ### Non-450 (Later Phases / Not in the Sheet)
 
@@ -112,13 +116,14 @@ Format: `<type>/<short-kebab-slug>`. Derived from [Conventional Commits](https:/
 
 ## Per-topic files
 
-- **`<Topic>/THEORY.md`** — static reference: concepts, complexity, the topic's problem list. Written upfront, doesn't change much.
-- **`<Topic>/mental-model.md`** — a running checklist of patterns recognized across solved problems in that topic, grouped by category. Grows organically: append to a matching section when a new problem reinforces it, add a new section when a genuinely new pattern shows up. Scan this *before* coding a new problem. Each entry links to its full write-up in `notes/`.
-- **`<Topic>/notes/<name>.md`** — one file per problem, matching the `<name>` used in `codes/`/`input/`/`output/`.
+- **`theory/<Topic>/THEORY.md`** — static concept reference (definitions, complexity). Predates the DSA-450 focus, not sheet-specific, kept separate from the active work below so it's never mistaken for the actual sheet's problem list.
+- **`lovebabbar-450dsa/<Topic>/README.md`** — the topic's landing page: the curated DSA-450 problem list (generated — see `scripts/generate_topic_readmes.py`) on top, and a **Mental Model** section below it that grows organically as problems are solved — append to a matching category when a new problem reinforces it, add a new category when a genuinely new pattern shows up. Scan this *before* coding a new problem. Each entry links to its full write-up in `notes/`.
+- **`lovebabbar-450dsa/<Topic>/notes/<name>.md`** — one file per problem, matching the `<name>` used in `codes/`/`input/`/`output/`.
   - The full-depth write-up: what made the problem hard, the reasoning step by step, where the thinking initially stalled, a reusable checklist for that problem family.
   - Not required for every problem — write one when the problem taught something worth remembering, skip it for routine ones.
   - This is where AI-discussion/search content and in-depth reasoning gets logged for later reference, so it doesn't need to be re-derived from scratch next time a similar problem shows up.
-- None of these three are linted or gated by CI — reviewed the same informal way as any other markdown.
+- None of these are linted or gated by CI — reviewed the same informal way as any other markdown.
+- The 4 GraphAlgorithms subfolders (Traversal/ShortestPath/MST/TopologicalSort) don't have a generated README.md yet — dsa450.ts's "graph" topic doesn't distinguish which sub-area each problem belongs to, so they still use the older standalone `mental-model.md` + `notes/` pair until that's sorted out by hand.
 
 ---
 
