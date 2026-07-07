@@ -16,7 +16,7 @@ jobs:
         id: changed
         run: |
           git fetch origin "${{ github.base_ref }}"
-          files=$(git diff --name-only --diff-filter=ACM "origin/${{ github.base_ref }}...HEAD" -- 'data-structures/**/*.cpp')
+          files=$(git diff --find-renames --name-only --diff-filter=ACM "origin/${{ github.base_ref }}...HEAD" -- '*.cpp' ':(exclude)companies/**')
           {
             echo "files<<EOF"
             echo "$files"

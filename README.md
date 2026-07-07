@@ -1,9 +1,43 @@
 # DSA
 
-- Learning + revision reference while working through Love Babbar's DSA-450 sheet, one problem (or one improvement) per branch and PR, even solo. See [data-structures/README.md](./data-structures/README.md) for the topic index and current scope.
+- Learning + revision reference while working through Love Babbar's DSA-450 sheet, one problem (or one improvement) per branch and PR, even solo.
 - [companies/](./companies/) holds real interview problems tied to a specific company — separate from the sheet work, not gated by the checks below.
-- Layout (per topic, under `data-structures/`): `<Topic>/codes/<name>.cpp` (source), `<Topic>/binary/<name>` (compiled output), `<Topic>/input/<name>.in` (sample input), `<Topic>/output/<name>.out` (expected output), `<Topic>/notes/<name>.md` (optional per-problem deep-dive). `<Topic>/THEORY.md` is the static theory/problem-list reference; `<Topic>/mental-model.md` is the organic pattern checklist that grows as problems get solved — see "Per-topic files" below.
+- Layout (per topic, at repo root): `<Topic>/codes/<name>.cpp` (source), `<Topic>/binary/<name>` (compiled output), `<Topic>/input/<name>.in` (sample input), `<Topic>/output/<name>.out` (expected output), `<Topic>/notes/<name>.md` (optional per-problem deep-dive). `<Topic>/THEORY.md` is the static theory/problem-list reference; `<Topic>/mental-model.md` is the organic pattern checklist that grows as problems get solved — see "Per-topic files" below.
 - One-time local setup after cloning: `git config core.hooksPath .githooks`.
+
+---
+
+## DSA-450 Topics
+
+Once DSA-450 is done, the plan is to move on to other sheets (Striver's A2Z/SDE, NeetCode 150, etc.). Topics below that aren't part of DSA-450 are parked under [non-450/](./non-450/) until that phase starts.
+
+Cross-checked against the canonical 15-topic breakdown (Array, Matrix, String, Searching & Sorting, Linked List, Binary Trees, BST, Greedy, BackTracking, Stack & Queue, Heap & Priority Queue, Graph, Trie, Dynamic Programming, Bit Manipulation) — folders here are split finer in places (e.g. Stack/Queue, Searching/Sorting as separate dirs) but cover the same ground.
+
+- [Arrays](./Arrays/THEORY.md)
+- [Matrix](./Matrix/THEORY.md)
+- [Linked Lists](./LinkedList/THEORY.md)
+- [Stacks](./Stack/THEORY.md)
+- [Queues](./Queue/THEORY.md)
+- [Trees](./Trees/THEORY.md) (covers Binary Trees + BST)
+- [Heaps](./Heaps/THEORY.md)
+- [Graphs](./Graphs/THEORY.md) + Graph Algorithms ([Traversal](./GraphAlgorithms/Traversal/THEORY.md), [Shortest Path](./GraphAlgorithms/ShortestPath/THEORY.md), [MST](./GraphAlgorithms/MST/THEORY.md), [Topological Sort](./GraphAlgorithms/TopologicalSort/THEORY.md))
+- [Tries](./Tries/THEORY.md)
+- [Sorting](./Sorting/THEORY.md)
+- [Searching](./Searching/THEORY.md)
+- [BackTracking](./BackTracking/THEORY.md)
+- [Dynamic Programming](./DynamicProgramming/THEORY.md)
+- [Greedy](./Greedy/THEORY.md)
+- [Bit Manipulation](./BitManipulation/THEORY.md)
+- [String Algorithms](./StringAlgorithms/THEORY.md)
+
+### Non-450 (Later Phases / Not in the Sheet)
+
+Reference theory only for now, not active work (`THEORY.md` only — no `mental-model.md`/`notes/` yet):
+
+- Later-sheet data structures: [Segment Trees](./non-450/SegmentTrees/THEORY.md), [Fenwick Trees](./non-450/FenwickTrees/THEORY.md), [Disjoint Set](./non-450/DisjointSet/THEORY.md), [Game Theory](./non-450/GameTheory/THEORY.md), [Advanced Data Structures](./non-450/AdvancedDataStructures/THEORY.md).
+- Not a category in Love Babbar's DSA-450 at all, kept as general reference: [Recursion](./non-450/Recursion/THEORY.md) (backtracking split out into its own active topic above), [Hash Tables](./non-450/HashTables/THEORY.md), [Divide & Conquer](./non-450/DivideAndConquer/THEORY.md), [Mathematical Algorithms](./non-450/MathematicalAlgorithms/NumberTheory/THEORY.md).
+
+See [Resources.md](./Resources.md) for books, courses, and practice platforms.
 
 ---
 
@@ -60,7 +94,8 @@ Format: `<type>/<short-kebab-slug>`. Derived from [Conventional Commits](https:/
 - **Compile + sample test** — `scripts/run-tests.sh` compiles the file and diffs its output against `input/<name>.in`/`output/<name>.out`; fails if either is missing for a new file. Required for every file, including structural/no-natural-I/O problems — write a driver that makes the behavior observable.
 - **Commit message** — `scripts/check-commit-msg.sh` rejects pure dates, `Auto-commit` placeholders, bare `problem N`, and anything under 12 characters.
 - These run twice: locally via the `.githooks/pre-push` + `.githooks/commit-msg` hooks, and again in `.github/workflows/ci.yml` on every PR — the PR check is the one that actually blocks a bad merge.
-- Scoped to `data-structures/**/*.cpp` — `code-start/` (C, not C++) and `algorithms/` aren't gated by this setup.
+- Scoped to any `*.cpp` file except `companies/**` — company-specific practice isn't gated by this setup.
+- Rename-aware: pure file moves (e.g. shifting a legacy file into `codes/`) aren't treated as new files needing a test pair — only genuine additions/modifications are.
 - Only files changed in the diff are checked, so pre-existing solutions are never retroactively blocked.
 
 ---
