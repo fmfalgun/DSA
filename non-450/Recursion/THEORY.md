@@ -1,6 +1,6 @@
 # Recursion - Complete Guide
 
-Not a standalone category in Love Babbar's DSA-450 sheet (the sheet has BackTracking as its own topic instead — see [BackTracking](../../BackTracking/THEORY.md)), but recursion is the base technique backtracking, divide & conquer, and tree/graph traversal all build on.
+Not a standalone category in Love Babbar's DSA-450 sheet (the sheet has BackTracking as its own topic instead — see [BackTracking](../../theory/BackTracking/THEORY.md)), but recursion is the base technique backtracking, divide & conquer, and tree/graph traversal all build on.
 
 ## Introduction
 
@@ -204,6 +204,6 @@ Recursion is essential for:
 - Tree and graph problems
 - Divide and conquer
 - Mathematical computations
-- Backtracking (see [BackTracking](../../BackTracking/THEORY.md))
+- Backtracking (see [BackTracking](../../theory/BackTracking/THEORY.md))
 
 **Key Takeaway:** Recursion is powerful but use wisely. Consider stack space and optimization.
