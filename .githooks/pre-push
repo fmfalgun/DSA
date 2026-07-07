@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Runs the same lint/test suite CI runs, scoped to commits not yet on
+# origin/master - so old, already-pushed files are never re-checked.
+set -uo pipefail
+root=$(git rev-parse --show-toplevel)
+cd "$root"
+
+git fetch origin master --quiet 2>/dev/null || true
+
+files=$(git diff --name-only --diff-filter=ACM origin/master...HEAD -- 'data-structures/**/*.cpp' 2>/dev/null || true)
+
+fail=0
+if [ -n "$files" ]; then
+  echo "$files" | xargs ./scripts/check-comments.sh || fail=1
+  echo "$files" | xargs ./scripts/check-magic-numbers.sh || fail=1
+  echo "$files" | xargs ./scripts/run-tests.sh || fail=1
+fi
+./scripts/check-commit-msg.sh --range origin/master..HEAD || fail=1
+
+exit $fail

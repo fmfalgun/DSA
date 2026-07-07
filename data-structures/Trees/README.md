@@ -637,7 +637,7 @@ Find minimum cameras needed to monitor all nodes (camera at node monitors parent
 - [Heaps](../Heaps/) - Special type of binary tree
 - [Tries](../Tries/) - Specialized tree for strings
 - [Graphs](../Graphs/) - Generalization of trees
-- [Segment Trees](../SegmentTrees/) - For range queries
+- [Segment Trees](../non-450/SegmentTrees/) - For range queries (non-450, later phase)
 
 ### Related Algorithms:
 - [Depth-First Search](../GraphAlgorithms/Traversal/)

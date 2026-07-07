@@ -15,4 +15,4 @@
 - Clustering
 - Approximation algorithms
 
-**See [Graphs README](../../Graphs/) and [DisjointSet README](../../DisjointSet/) for details.**
+**See [Graphs README](../../Graphs/) and [DisjointSet README](../../non-450/DisjointSet/) for details.**
