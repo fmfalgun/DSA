@@ -1,7 +1,8 @@
 # DSA
 
 - Learning + revision reference while working through Love Babbar's DSA-450 sheet, one problem (or one improvement) per branch and PR, even solo. See [data-structures/README.md](./data-structures/README.md) for the topic index and current scope.
-- Layout (per topic, under `data-structures/`): `<Topic>/codes/<name>.cpp` (source), `<Topic>/binary/<name>` (compiled output), `<Topic>/input/<name>.in` (sample input), `<Topic>/output/<name>.out` (expected output), `<Topic>/notes/<name>.md` (optional per-problem deep-dive — the topic's own `README.md` already serves as its theory/mental-model reference).
+- [companies/](./companies/) holds real interview problems tied to a specific company — separate from the sheet work, not gated by the checks below.
+- Layout (per topic, under `data-structures/`): `<Topic>/codes/<name>.cpp` (source), `<Topic>/binary/<name>` (compiled output), `<Topic>/input/<name>.in` (sample input), `<Topic>/output/<name>.out` (expected output), `<Topic>/notes/<name>.md` (optional per-problem deep-dive). `<Topic>/THEORY.md` is the static theory/problem-list reference; `<Topic>/mental-model.md` is the organic pattern checklist that grows as problems get solved — see "Per-topic files" below.
 - One-time local setup after cloning: `git config core.hooksPath .githooks`.
 
 ---
@@ -74,13 +75,15 @@ Format: `<type>/<short-kebab-slug>`. Derived from [Conventional Commits](https:/
 
 ---
 
-## Notes convention (per problem, optional)
+## Per-topic files
 
+- **`<Topic>/THEORY.md`** — static reference: concepts, complexity, the topic's problem list. Written upfront, doesn't change much.
+- **`<Topic>/mental-model.md`** — a running checklist of patterns recognized across solved problems in that topic, grouped by category. Grows organically: append to a matching section when a new problem reinforces it, add a new section when a genuinely new pattern shows up. Scan this *before* coding a new problem. Each entry links to its full write-up in `notes/`.
 - **`<Topic>/notes/<name>.md`** — one file per problem, matching the `<name>` used in `codes/`/`input/`/`output/`.
   - The full-depth write-up: what made the problem hard, the reasoning step by step, where the thinking initially stalled, a reusable checklist for that problem family.
-  - Not machine-checked and not required for every problem — write one when the problem taught something worth remembering, skip it for routine ones.
+  - Not required for every problem — write one when the problem taught something worth remembering, skip it for routine ones.
   - This is where AI-discussion/search content and in-depth reasoning gets logged for later reference, so it doesn't need to be re-derived from scratch next time a similar problem shows up.
-- Not linted or gated by CI — reviewed the same informal way as any other markdown.
+- None of these three are linted or gated by CI — reviewed the same informal way as any other markdown.
 
 ---
 
