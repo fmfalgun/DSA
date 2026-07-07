@@ -7,7 +7,7 @@ cd "$root"
 
 git fetch origin master --quiet 2>/dev/null || true
 
-files=$(git diff --name-only --diff-filter=ACM origin/master...HEAD -- 'data-structures/**/*.cpp' 2>/dev/null || true)
+files=$(git diff --find-renames --name-only --diff-filter=ACM origin/master...HEAD -- '*.cpp' ':(exclude)companies/**' 2>/dev/null || true)
 
 fail=0
 if [ -n "$files" ]; then
